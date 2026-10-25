@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/varomnrg/agent-kit/schemas/herdr-team-policy.json",
+  "title": "Herdr team policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "max_active_teams",
+    "max_working_members",
+    "assignment_history_per_member",
+    "attention_coalesce_ms"
+  ],
+  "properties": {
+    "max_active_teams": { "type": "integer", "minimum": 1 },
+    "max_working_members": { "type": "integer", "minimum": 1 },
+    "assignment_history_per_member": { "type": "integer", "minimum": 1 },
+    "attention_coalesce_ms": { "type": "integer", "minimum": 0 }
+  }
+}

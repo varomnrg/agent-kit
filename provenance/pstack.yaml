@@ -1,0 +1,76 @@
+source_repository: https://github.com/cursor/plugins/tree/main/pstack
+revision: 9580c23696ac8d7abed0c166f2f9918800afb819
+license: MIT
+principles:
+  - source: laziness-protocol
+    disposition: merged
+    target: smallest-sufficient-change
+  - source: foundational-thinking
+    disposition: merged
+    target: foundational-model
+  - source: redesign-from-first-principles
+    disposition: retained
+    target: coherent-redesign
+  - source: attack-the-premise
+    disposition: retained
+    target: attack-the-premise
+  - source: subtract-before-you-add
+    disposition: merged
+    target: smallest-sufficient-change
+  - source: minimize-reader-load
+    disposition: retained
+    target: reader-locality
+  - source: outcome-oriented-execution
+    disposition: merged
+    target: target-state-migration
+  - source: experience-first
+    disposition: absorbed
+    target: compass-outcome-framing
+  - source: exhaust-the-design-space
+    disposition: retained
+    target: explore-consequential-alternatives
+  - source: build-the-lever
+    disposition: merged
+    target: earn-the-mechanism
+  - source: model-the-domain
+    disposition: merged
+    target: foundational-model
+  - source: boundary-discipline
+    disposition: merged
+    target: boundary-discipline
+  - source: type-system-discipline
+    disposition: merged
+    target: foundational-model-and-boundary-discipline
+  - source: make-operations-idempotent
+    disposition: retained
+    target: idempotent-operations
+  - source: migrate-callers-then-delete-legacy-apis
+    disposition: merged
+    target: target-state-migration
+  - source: separate-before-serializing-shared-state
+    disposition: retained
+    target: separate-shared-state
+  - source: prove-it-works
+    disposition: merged
+    target: root-cause-proof
+  - source: fix-root-causes
+    disposition: merged
+    target: root-cause-proof
+  - source: sequence-verifiable-units
+    disposition: retained
+    target: verifiable-units
+  - source: test-behavior-not-implementation
+    disposition: retained
+    target: behavioral-contract
+  - source: explain-the-number
+    disposition: retained
+    target: explain-the-measurement
+  - source: guard-the-context-window
+    disposition: absorbed
+    target: compass-bounded-delegation-rule
+  - source: never-block-on-the-human
+    disposition: absorbed
+    target: compass-granted-scope-rule
+  - source: encode-lessons-in-structure
+    disposition: merged
+    target: earn-the-mechanism

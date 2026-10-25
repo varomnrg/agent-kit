@@ -1,0 +1,28 @@
+resources:
+  - source: komplek:skills/custom/diagnosing-bugs
+    disposition: moved-and-rewritten
+    target: diagnosing-bugs
+  - source: komplek:skills/custom/zoom-out
+    disposition: absorbed
+    target: compass-mode
+  - source: komplek:skills/custom/herdr-team
+    disposition: moved-and-rewritten
+    target: herdr-team
+  - source: komplek:files/herdr-team
+    disposition: moved
+    target: integrations/herdr-team
+  - source: plans:.agents/skills
+    disposition: kept-external
+    reason: plans workflow and publication authority remains with Plans
+  - source: pi:herdr
+    disposition: kept-external
+    reason: tool-owned operational skill
+  - source: pi:wizard
+    disposition: kept-external
+    reason: tool-owned operational skill
+  - source: pi-subagents
+    disposition: kept-external
+    reason: package-owned delegation capability
+  - source: pi-subagents:council-mode
+    disposition: kept-external
+    reason: package-owned advisory workflow

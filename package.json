@@ -1,0 +1,36 @@
+{
+  "name": "@varomnrg/agent-kit",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "description": "Timothy's modular, curated agent skill catalog",
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ],
+    "extensions": [
+      "./integrations/herdr-team/index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts tests/**/*.test.ts",
+    "validate": "node scripts/validate-catalog.mjs"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "latest",
+    "@earendil-works/pi-coding-agent": "latest",
+    "@earendil-works/pi-tui": "latest",
+    "tsx": "latest",
+    "typebox": "latest",
+    "typescript": "latest"
+  }
+}

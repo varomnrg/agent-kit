@@ -1,0 +1,32 @@
+source_repository: https://github.com/mattpocock/skills
+revision: d81f3a183412e71a5b1e84ca21bc1a35eea03a60
+release: v1.2.3
+license: MIT
+resources:
+  - source: grilling
+    disposition: adapted
+    target: grill
+  - source: grill-with-docs
+    disposition: adapted
+    target: grill-with-docs
+  - source: codebase-design
+    disposition: adapted
+    target: codebase-design
+  - source: domain-modeling
+    disposition: adapted
+    target: domain-modeling
+  - source: writing-for-agents
+    disposition: adapted
+    target: agent-instructions
+  - source: retro
+    disposition: adapted
+    target: agent-retro
+  - source: handoff
+    disposition: adapted
+    target: handoff
+  - source: setup-matt-pocock-skills
+    disposition: retired
+    reason: unused ecosystem bootstrap coupled to skills outside this catalog
+  - source: improve-codebase-architecture
+    disposition: retired
+    reason: architecture-wide scanning is deferred until observed need
