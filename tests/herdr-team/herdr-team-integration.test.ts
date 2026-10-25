@@ -51,7 +51,10 @@ async function callTool(tool: any, params: any, ctx: ExtensionContext) {
 }
 
  test("registered handlers invoke every legacy and new action with exact team targeting", async () => {
+  const previousEnv = { HERDR_ENV: process.env.HERDR_ENV, HERDR_PANE_ID: process.env.HERDR_PANE_ID };
+  process.env.HERDR_ENV = "1";
   process.env.HERDR_PANE_ID = "coord";
+  try {
   const stateDir = await mkdtemp(join(tmpdir(), "herdr-integration-actions-"));
   const first = newTeam({ id: "first", objective: "first objective", repository: "/repo", ownerSessionId: "session", ownerPaneId: "coord" });
   add(first, "worker", "pane-a");
@@ -94,6 +97,10 @@ async function callTool(tool: any, params: any, ctx: ExtensionContext) {
   const outcome = await callTool(tool, { action: "record_outcome", teamId: "second", assignmentId: assignment, outcome: "accepted", summary: "accepted" }, ctx);
   assert.match(outcome.content[0].text, /accepted/);
   assert.equal(JSON.stringify(await listTeams(stateDir)).includes("PRIVATE PROMPT"), false);
+  } finally {
+    if (previousEnv.HERDR_ENV === undefined) delete process.env.HERDR_ENV; else process.env.HERDR_ENV = previousEnv.HERDR_ENV;
+    if (previousEnv.HERDR_PANE_ID === undefined) delete process.env.HERDR_PANE_ID; else process.env.HERDR_PANE_ID = previousEnv.HERDR_PANE_ID;
+  }
 });
 
 test("session start contains lock contention instead of crashing Pi", async () => {
