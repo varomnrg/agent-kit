@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "skills": [
+    {
+      "name": "agent-instructions",
+      "kind": "primary",
+      "path": "skills/agent-instructions",
+      "requires": [],
+      "optional": [],
+      "pi": {
+        "skills": [
+          "skills/agent-instructions"
+        ]
+      }
+    },
+    {
+      "name": "agent-retro",
+      "kind": "primary",
+      "path": "skills/agent-retro",
+      "requires": [],
+      "optional": [
+        "agent-instructions"
+      ],
+      "pi": {
+        "skills": [
+          "skills/agent-retro"
+        ]
+      }
+    },
+    {
+      "name": "codebase-design",
+      "kind": "primary",
+      "path": "skills/codebase-design",
+      "requires": [],
+      "optional": [
+        "domain-modeling"
+      ],
+      "pi": {
+        "skills": [
+          "skills/codebase-design"
+        ]
+      }
+    },
+    {
+      "name": "compass-mode",
+      "kind": "primary",
+      "path": "skills/compass-mode",
+      "requires": [],
+      "optional": [
+        "agent-instructions",
+        "agent-retro",
+        "codebase-design",
+        "diagnosing-bugs",
+        "domain-modeling",
+        "grill",
+        "grill-with-docs",
+        "handoff",
+        "herdr-team"
+      ],
+      "pi": {
+        "skills": [
+          "skills/compass-mode"
+        ]
+      }
+    },
+    {
+      "name": "diagnosing-bugs",
+      "kind": "primary",
+      "path": "skills/diagnosing-bugs",
+      "requires": [],
+      "optional": [
+        "codebase-design"
+      ],
+      "pi": {
+        "skills": [
+          "skills/diagnosing-bugs"
+        ]
+      }
+    },
+    {
+      "name": "domain-modeling",
+      "kind": "primary",
+      "path": "skills/domain-modeling",
+      "requires": [],
+      "optional": [],
+      "pi": {
+        "skills": [
+          "skills/domain-modeling"
+        ]
+      }
+    },
+    {
+      "name": "grill",
+      "kind": "primary",
+      "path": "skills/grill",
+      "requires": [],
+      "optional": [],
+      "pi": {
+        "skills": [
+          "skills/grill"
+        ]
+      }
+    },
+    {
+      "name": "grill-with-docs",
+      "kind": "composite",
+      "path": "skills/grill-with-docs",
+      "requires": [
+        "grill"
+      ],
+      "optional": [
+        "domain-modeling"
+      ],
+      "pi": {
+        "skills": [
+          "skills/grill-with-docs"
+        ]
+      }
+    },
+    {
+      "name": "handoff",
+      "kind": "primary",
+      "path": "skills/handoff",
+      "requires": [],
+      "optional": [],
+      "pi": {
+        "skills": [
+          "skills/handoff"
+        ]
+      }
+    },
+    {
+      "name": "herdr-team",
+      "kind": "primary",
+      "path": "skills/herdr-team",
+      "requires": [],
+      "optional": [],
+      "integration": "herdr-team",
+      "pi": {
+        "skills": [
+          "skills/herdr-team"
+        ]
+      }
+    }
+  ],
+  "integrations": [
+    {
+      "name": "herdr-team",
+      "skill": "herdr-team",
+      "pi": {
+        "extensions": [
+          "integrations/herdr-team/index.ts"
+        ]
+      }
+    }
+  ],
+  "bundles": {
+    "core": [
+      "agent-retro",
+      "compass-mode",
+      "grill",
+      "grill-with-docs",
+      "handoff"
+    ],
+    "development": [
+      "agent-instructions",
+      "agent-retro",
+      "codebase-design",
+      "compass-mode",
+      "diagnosing-bugs",
+      "domain-modeling",
+      "grill",
+      "grill-with-docs",
+      "handoff"
+    ],
+    "full": [
+      "agent-instructions",
+      "agent-retro",
+      "codebase-design",
+      "compass-mode",
+      "diagnosing-bugs",
+      "domain-modeling",
+      "grill",
+      "grill-with-docs",
+      "handoff"
+    ]
+  }
+}

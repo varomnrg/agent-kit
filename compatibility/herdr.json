@@ -1,0 +1,18 @@
+{
+  "minimumTestedVersion": "0.9.0",
+  "localCli": "herdr",
+  "mutationsRequire": [
+    "HERDR_ENV=1",
+    "HERDR_PANE_ID"
+  ],
+  "optionalEnvironment": [
+    "HERDR_TEAM_STATE_DIR",
+    "HERDR_TEAM_POLICY_PATH"
+  ],
+  "requiredCliSurfaces": [
+    "agent",
+    "pane",
+    "tab",
+    "status --json"
+  ]
+}

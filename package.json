@@ -1,6 +1,6 @@
 {
   "name": "@varomnrg/agent-kit",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "Timothy's modular, curated agent skill catalog",
@@ -17,7 +17,10 @@
   },
   "scripts": {
     "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts tests/**/*.test.ts",
-    "validate": "node scripts/validate-catalog.mjs"
+    "validate": "node scripts/validate-catalog.mjs",
+    "catalog:generate": "node scripts/generate-catalog.mjs",
+    "catalog:check": "node scripts/validate-catalog.mjs --check-catalog",
+    "test:clean-home": "bash scripts/test-clean-pi-home.sh"
   },
   "peerDependencies": {
     "@earendil-works/pi-ai": "*",
@@ -31,6 +34,7 @@
     "@earendil-works/pi-tui": "latest",
     "tsx": "latest",
     "typebox": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "yaml": "^2.9.1"
   }
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFile, readdir, stat } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
+import { buildCatalog, renderCatalog } from "./catalog-lib.mjs";
 
 const root = resolve(new URL("..", import.meta.url).pathname);
 const skillsRoot = join(root, "skills");
@@ -51,6 +52,12 @@ if (!grillWithDocs.includes("requires: [grill]")) errors.push("grill-with-docs m
 if ((grillWithDocs.match(/The \*\*frontier\*\*/g) || []).length) errors.push("grill-with-docs duplicates grill's frontier procedure");
 const compass = skillSources.get("compass-mode") || "";
 if (!compass.includes("disable-model-invocation: true")) errors.push("compass-mode must be explicit-only");
+
+const generatedCatalog = renderCatalog(await buildCatalog());
+if (process.argv.includes("--check-catalog")) {
+  const checkedIn = await readFile(join(root, "catalog.json"), "utf8").catch(() => "");
+  if (checkedIn !== generatedCatalog) errors.push("catalog.json is stale; run npm run catalog:generate");
+}
 
 const packageJson = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
 if (packageJson.name !== "@varomnrg/agent-kit") errors.push("unexpected package name");

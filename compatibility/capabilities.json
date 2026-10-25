@@ -1,0 +1,18 @@
+{
+  "pi-subagents": {
+    "channel": "latest-qualified",
+    "qualification": "fresh-async-worker-smoke"
+  },
+  "pi-web-access": {
+    "channel": "latest-qualified",
+    "qualification": "fresh-tool-registration-smoke"
+  },
+  "@ff-labs/pi-fff": {
+    "channel": "latest-qualified",
+    "qualification": "bounded-search-smoke"
+  },
+  "herdr": {
+    "channel": "latest-qualified",
+    "qualification": "client-server-and-team-integration-smoke"
+  }
+}
