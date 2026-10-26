@@ -7,6 +7,7 @@
 5. Present the commit, intended tag, verification, and effect for approval.
 6. Create an annotated immutable tag only after that approval.
 
-The first candidate is `v0.1.0`. Corrections create `v0.1.x`; never move a tag.
-`v1.0.0` is reserved for the exact content proven on both managed homelab
-hosts. Repository visibility changes require a separate publication review.
+The first candidate was `v0.1.0`. Corrections to a candidate use a new
+`v0.1.x`; never move a tag. `v1.0.0` promotes the exact behavior proven on both
+managed homelab hosts. Repository visibility changes require a separate
+publication review.
