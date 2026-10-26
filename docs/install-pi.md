@@ -6,8 +6,8 @@ Pin an immutable Git tag:
 pi install git:github.com/varomnrg/agent-kit@v0.1.0
 ```
 
-For a private repository, use the consumer's existing authenticated Git
-transport. Never place a token in Pi settings or the package source.
+The repository is public, so installation requires no repository credential.
+Never place a token in Pi settings or the package source.
 
 Render the desired selection and place its `skills` and `extensions` arrays on
 the package object in `~/.pi/agent/settings.json` through the environment's
